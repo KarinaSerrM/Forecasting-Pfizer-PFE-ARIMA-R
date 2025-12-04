@@ -43,7 +43,7 @@ El script sigue los siguientes pasos lógicos:
 
 1.  **Pre-procesamiento:** Se calculan los precios de cierre ajustados y se limpian valores extremos que podrían distorsionar el modelo (Clip IQR).
 2.  **Transformación:** Se convierten los precios a **Retornos Logarítmicos Diarios** para estabilizar la varianza.
-    $$ r_t = \ln(P_t) - \ln(P_{t-1}) $$
+     r_t = \ln(P_t) - \ln(P_{t-1}) 
 3.  **Entrenamiento:** Se divide la data en 80% Train y 20% Test.
 4.  **Evaluación:** Se calculan métricas de error (MAE, RMSE, MAPE) simulando predicciones día a día sobre el conjunto de prueba.
 5.  **Pronóstico Final:** Se re-entrena el modelo con el 100% de los datos y se proyectan 10 días, revirtiendo la transformación logarítmica para obtener precios en USD.
